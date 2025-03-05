@@ -23,7 +23,7 @@
 - Refactor our code to add constants file + create a components folder 
 - You should not be access other route without login
 - If token is not present, redirect user to login page
-- Logout
+- Logout Feature
 - Profile Page
 
 Body
