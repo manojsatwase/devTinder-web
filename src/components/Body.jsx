@@ -1,12 +1,13 @@
-import React, { use, useEffect } from 'react'
+import React, {  useEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom';
 
 import Footer from './Footer';
-import NavBar from './Navbar';
+
 import axios from 'axios';
 import { BASE_URL } from '../utils/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import NavBar from './NavBar';
 
 const Body = () => {
   const dispatch = useDispatch();
