@@ -8,3 +8,10 @@
   prefix: ;
   logs: true;
 }
+
+.radio {
+  &:checked, &[aria-checked="true"] {
+      background-color: #f6bc58;
+      border: none;
+    }
+  }

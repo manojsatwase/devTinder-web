@@ -6,6 +6,8 @@ import Login from './components/Login';
 import Profile from './components/Profile';
 import Feed from './components/Feed';
 import appStore from './utils/appStore';
+import Connections from './components/Connections';
+import Requests from './components/Requests';
 
 const App = () => {
   // Routing can be created at the root level of your application
@@ -21,6 +23,8 @@ const App = () => {
           <Route path="/login" element={<Login/>} />
           <Route path="/profile" element={<Profile/>} />
           <Route path="/signup" element={<div>signup</div>} />
+          <Route path="/connections" element={<Connections />} />
+          <Route path="/requests" element={<Requests />} />
         </Route>
       </Routes>
     </BrowserRouter>

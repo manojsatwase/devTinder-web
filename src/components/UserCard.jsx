@@ -19,8 +19,8 @@ const UserCard = ({user}) => {
       </div>
       <p>{about}</p>
       <div className="card-actions justify-end">
-        <button className="btn bg-blue-500 border-0 btn-primary px-4 py-2">Ignore</button>
-        <button className="btn bg-green-500 border-0 px-4 py-2">Interested</button>
+        <button className="btn bg-blue-500 border-0 px-4 py-2">Ignore</button>
+        <button className="btn bg-pink-500 border-0 px-4 py-2">Interested</button>
       </div>
     </div>
   </div>
