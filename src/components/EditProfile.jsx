@@ -60,7 +60,7 @@ const EditProfile = ({ user }) => {
             setLoading(false);
         }
     }
-  console.log(showTost);
+
     return (
         <div className="flex gap-10 justify-center">
             <div className="flex justify-center my-10">

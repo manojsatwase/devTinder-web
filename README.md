@@ -32,9 +32,10 @@
 - New Page - See all my connections
 - New Page - See all my connections Request
 - Feature - Accepted/Reject Connection Request
+- -  Send / ignores the User card from Feed
 
 - Remaining
--  Send / ignore the User card from Feed
+
 - Signup New User
 - E2E Testing 
 
