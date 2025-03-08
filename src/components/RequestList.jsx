@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+
 import { capitalFirstLetter } from '../utils/constants';
 
 const RequestList = ({ request, reviewRequest }) => {
