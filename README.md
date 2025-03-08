@@ -31,7 +31,12 @@
 - Show Toast Massege on save of profile
 - New Page - See all my connections
 - New Page - See all my connections Request
+- Feature - Accepted/Reject Connection Request
 
+- Remaining
+-  Send / ignore the User card from Feed
+- Signup New User
+- E2E Testing 
 
 Body
     NavBar
