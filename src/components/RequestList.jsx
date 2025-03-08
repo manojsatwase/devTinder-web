@@ -1,4 +1,3 @@
-
 import { capitalFirstLetter } from '../utils/constants';
 
 const RequestList = ({ request, reviewRequest }) => {
