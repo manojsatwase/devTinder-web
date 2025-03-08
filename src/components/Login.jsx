@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { useNavigate } from "react-router-dom";
@@ -8,30 +8,35 @@ import { BASE_URL } from "../utils/constants";
 const Login = () => {
   const [emailId, setEmailId] = useState("manoj@gmail.com");
   const [password, setPassword] = useState("Manoj@123");
-  const [error,setError] = useState("");
+  const [error, setError] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const userData = useSelector(state=>state.user);
-  if(userData) return navigate("/");
+  const userData = useSelector((store) => store.user);
+
+  // If user is already logged in, redirect to home
+  useEffect(() => {
+    if (userData) {
+      navigate("/"); // Navigation should happen after render
+    }
+  }, [userData, navigate]);
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post(`${BASE_URL}/login`, {
-        emailId,
-        password
-      }, {
-        withCredentials: true
-      })
+      const res = await axios.post(
+        `${BASE_URL}/login`,
+        { emailId, password },
+        { withCredentials: true }
+      );
       const { message, user } = res?.data;
-      // dispatch and action
+      // Dispatch the user data to Redux store
       dispatch(addUser(user));
-      return navigate("/");
+      navigate("/"); // Navigate to home after successful login
     } catch (err) {
       setError(err?.response?.data || "Something went wrong!");
     }
-  }
+  };
 
   return (
     <div className="flex justify-center my-10">
@@ -49,7 +54,6 @@ const Login = () => {
                 placeholder="Please Enter Valid Email ID"
                 className="input input-bordered w-full max-w-xs py-2 border-0 my-2"
                 onChange={(e) => setEmailId(e.target.value)}
-              // binding this emailID to my input box
               />
             </label>
             <label className="form-control w-full max-w-xs">
@@ -70,12 +74,14 @@ const Login = () => {
             <button
               className="btn btn-primary bg-primary border-0 p-2"
               onClick={handleLogin}
-            >Login</button>
+            >
+              Login
+            </button>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Login;

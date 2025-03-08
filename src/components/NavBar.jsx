@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const NavBar = () => {
-    const user = useSelector(state => state.user);
+    const user = useSelector(store => store.user);
     const dispatch = useDispatch();
     const navigator = useNavigate();
 

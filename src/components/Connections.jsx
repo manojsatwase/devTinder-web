@@ -8,7 +8,7 @@ import ConnectionsCard from "./connectionsCard";
 const Connections = () => {
     const dispatch = useDispatch();
 
-    const connections = useSelector(state=>state.connections);
+    const connections = useSelector(store=>store.connections);
 
     const featchConnection = async () => {
         if(connections) return;

@@ -1,9 +1,9 @@
 import { capitalFirstLetter } from "../utils/constants";
 
 const connectionsCard = ({ connection }) => {
-    const { firstName, lastName, photoUrl, age, gender, about ,skills} = connection;
+    const { _id,firstName, lastName, photoUrl, age, gender, about ,skills} = connection;
     return (
-        <div className="m-4 p-4 text-left rounded-lg w-75 bg-base-300">
+        <div  className="m-4 p-4 text-left rounded-lg w-75 bg-base-300">
             <img
                 alt="photo"
                 src={photoUrl}
