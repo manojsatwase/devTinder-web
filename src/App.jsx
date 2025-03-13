@@ -1,13 +1,14 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Provider } from "react-redux";
 
-import Body from './components/Body';
-import Login from './components/Login';
-import Profile from './components/Profile';
-import Feed from './components/Feed';
-import appStore from './utils/appStore';
-import Connections from './components/Connections';
-import Requests from './components/Requests';
+import Body from "./components/Body";
+import Login from "./components/Login";
+import Profile from "./components/Profile";
+import Feed from "./components/Feed";
+import appStore from "./utils/appStore";
+import Connections from "./components/Connections";
+import Requests from "./components/Requests";
+import Premium from "./components/Premium";
 
 const App = () => {
   // Routing can be created at the root level of your application
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/signup" element={<div>signup</div>} />
           <Route path="/connections" element={<Connections />} />
           <Route path="/requests" element={<Requests />} />
+          <Route path="/premium" element={<Premium />} />
         </Route>
       </Routes>
     </BrowserRouter>
