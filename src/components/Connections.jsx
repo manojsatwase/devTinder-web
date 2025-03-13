@@ -8,10 +8,9 @@ import ConnectionsCard from "./connectionsCard";
 const Connections = () => {
     const dispatch = useDispatch();
 
-    const connections = useSelector(store=>store.connections);
+    const connections = useSelector(store=>store?.connections);
 
     const featchConnection = async () => {
-        if(connections) return;
         try {
             const res = await axios.get(BASE_URL + "/user/connections", {
                 withCredentials: true
@@ -27,15 +26,14 @@ const Connections = () => {
     }, []);
 
     if(!connections) return;
-
-    if(connections?.length === 0) return <h1>No Connections Found!</h1>
-
+    if(connections?.length === 0) return <h1 className="text-center my-10">No Connections Found!</h1>
+ 
     return (
         <div className="text-center my-10">
             <h1 className="text-bold text-2xl">Connections</h1>
-            <div className="flex justify-center">
+            <div>
             {
-                connections.map(connection=><ConnectionsCard key={connection._id} connection={connection} />)
+                connections?.map((connection , index)=><ConnectionsCard key={index} connection={connection} />)
             }
             </div>
         </div>
