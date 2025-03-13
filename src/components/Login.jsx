@@ -11,6 +11,9 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [age, setAge] = useState("");
+  const [gender, setGender] = useState("");
+  const [about, setAbout] = useState("");
   const [isLoginForm, setIsLoginForm] = useState(true);
   const [error, setError] = useState("");
   const dispatch = useDispatch();
@@ -37,7 +40,7 @@ const Login = () => {
     try {
       const res = await axios.post(
         BASE_URL + "/signup",
-        { firstName, lastName, emailId, password },
+        { firstName, lastName, age, gender, about, emailId, password },
         { withCredentials: true }
       );
       dispatch(addUser(res.data.data));
@@ -80,6 +83,56 @@ const Login = () => {
                     className="input input-bordered py-2 my-2 w-full max-w-xs"
                     onChange={(e) => setLastName(e.target.value)}
                   />
+                </label>
+                <label className="form-control w-full max-w-xs my-2">
+                  <div className="label">
+                    <span className="label-text">Age</span>
+                  </div>
+                  <input
+                    type="number"
+                    value={age}
+                    placeholder="Enter the Age"
+                    className="input input-bordered py-2 my-2 w-full max-w-xs"
+                    onChange={(e) => setAge(e.target.value)}
+                  />
+                </label>
+                <div>
+                  <span>Male :</span>
+                  <input
+                    type="radio"
+                    value="male"
+                    name="gender"
+                    checked={gender === 'male'}
+                    className={`radio radio-success  p-2 mx-2 `}
+                    onChange={(e) => setGender(e.target.value)}
+                  />
+                  <span className="mx-2">Female :</span>
+                  <input
+                    type="radio"
+                    value="female"
+                    name="gender"
+                    checked={gender === 'female'}
+                    className={`radio radio-success  p-2 mx-2`}
+                    onChange={(e) => setGender(e.target.value)}
+                  />
+                  <span className="mx-2">Other :</span>
+                  <input
+                    type="radio"
+                    value="other"
+                    name="gender"
+                    checked={gender === 'other'}
+                    className={`radio radio-success  p-2 mx-2`}
+                    onChange={(e) => setGender(e.target.value)}
+                  />
+                </div>
+                <label>
+                  <textarea
+                    type="text"
+                    value={about}
+                    placeholder="about"
+                    className="textarea textarea-secondary my-2"
+                    onChange={(e) => setAbout(e.target.value)}
+                  ></textarea>
                 </label>
               </>
             )}
