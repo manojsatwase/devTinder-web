@@ -51,7 +51,7 @@ const Requests = () => {
   
     // Cleanup timer on unmount
     return () => clearTimeout(timer);
-  }, [success, requests]);  // Trigger re-fetch when either `success` or `requests` changes
+  }, [success]);  // Trigger re-fetch when either `success` or `requests` changes
   
 
   if (!requests) return;

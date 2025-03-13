@@ -21,11 +21,11 @@ const RequestList = ({ request, reviewRequest }) => {
             <div>
                 <button
                     className="btn btn-primary bg-purple-500 border-0 px-3 my-1 py-2 mx-2 font-bold"
-                    onClick={() => reviewRequest("rejected", _id)}
+                    onClick={() => reviewRequest("rejected", request._id)}
                 >Reject</button>
                 <button
                     className="btn btn-secondary bg-pink-500 border-0 px-3 my-1 py-2 mx-2 font-bold"
-                    onClick={() => reviewRequest("accepted", _id)}
+                    onClick={() => reviewRequest("accepted", request._id)}
                 >Accept</button>
             </div>
         </div>
