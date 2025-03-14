@@ -8,7 +8,7 @@ import ConnectionsCard from "./connectionsCard";
 const Connections = () => {
     const dispatch = useDispatch();
 
-    const connections = useSelector(store=>store?.connections);
+    const connections = useSelector(store => store?.connections);
 
     const featchConnection = async () => {
         try {
@@ -24,18 +24,17 @@ const Connections = () => {
     useEffect(() => {
         featchConnection();
     }, []);
-
-    if(!connections) return;
-    if(connections?.length === 0) return <h1 className="text-center my-10">No Connections Found!</h1>
  
+    if (!connections) return <h1 className="text-center my-10">No Connections Found!</h1>;
+    if (connections?.length === 0) return <h1 className="text-center my-10">No Connections Found!</h1>
+
     return (
         <div className="text-center my-10">
             <h1 className="text-bold text-2xl">Connections</h1>
-            <div>
-            {
-                connections?.map((connection , index)=><ConnectionsCard key={index} connection={connection} />)
-            }
-            </div>
+            {connections && (
+                connections?.map((connection) => <ConnectionsCard  key={connection?._id} connection={connection} />)
+
+            )}
         </div>
     )
 }

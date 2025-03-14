@@ -6,7 +6,6 @@ const connectionsCard = ({ connection }) => {
           connection;
     return (
         <div
-            key={_id}
             className="flex m-4 p-4 rounded-lg bg-base-300 w-1/2 mx-auto justify-between"
           >
             <div className="flex flex-wrap">
