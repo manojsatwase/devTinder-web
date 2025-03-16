@@ -46,3 +46,19 @@ Body
     Route=/signup => Signup
     Route=/connections => Connections
     Route=/profile => Profile
+
+# Real Time Chat using Websocket (Socket.io)
+    - Build the UI for a chat window on /chat/:targetUserId
+    - Setup socket.io in backend
+    - npm i socket.io
+    - Setup frontend socket.io-client
+    - initialise the chat
+    - createSocketconnection 
+    - Listen to events
+    - Homework: improve the UI
+    - Homework: Fix Security Bug - auth in web sockets
+    -  Can I send messages to a person who is not my friends ? 
+    - Homework: Fix bug - If I'm not friend, then I should not be able to send message
+    - Homework: feat: Show green when online?? - [last seen 2 hour ago]
+    - Homework: limit messages when featching from DB - load 15 messages when i scroll then hit again 15 messages
+    - 
